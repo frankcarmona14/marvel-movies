@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/marvel-movies/static/css/main.44f8b8b5.css",
-    "main.js": "/marvel-movies/static/js/main.3970ab13.js",
+    "main.css": "/marvel-movies/static/css/main.415e71a7.css",
+    "main.js": "/marvel-movies/static/js/main.090ad37e.js",
+    "static/media/Marvel_Logo.svg": "/marvel-movies/static/media/Marvel_Logo.ce377fd37227dd680d0b06449a5bcc4c.svg",
     "index.html": "/marvel-movies/index.html",
-    "main.44f8b8b5.css.map": "/marvel-movies/static/css/main.44f8b8b5.css.map",
-    "main.3970ab13.js.map": "/marvel-movies/static/js/main.3970ab13.js.map"
+    "main.415e71a7.css.map": "/marvel-movies/static/css/main.415e71a7.css.map",
+    "main.090ad37e.js.map": "/marvel-movies/static/js/main.090ad37e.js.map"
   },
   "entrypoints": [
-    "static/css/main.44f8b8b5.css",
-    "static/js/main.3970ab13.js"
+    "static/css/main.415e71a7.css",
+    "static/js/main.090ad37e.js"
   ]
 }
