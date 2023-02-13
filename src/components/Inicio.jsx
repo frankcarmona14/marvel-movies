@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { movies } from "../functions/functions";
-import { Row, Col, Card, Button, Image } from "react-bootstrap/";
+import { Row, Col, Card, Button } from "react-bootstrap/";
 
 const Inicio = () => {
   const [unicMovies, setMovies] = useState(null);
