@@ -1,38 +1,55 @@
 import React, { useEffect, useState } from "react";
 import { movies } from "../functions/functions";
+import { Row, Col, Card, Button, Image } from "react-bootstrap/";
 
 const Inicio = () => {
   const [unicMovies, setMovies] = useState(null);
-  const person28 =
-    "https://raw.githubusercontent.com/AugustoMarcelo/mcuapi/master/covers/doctor-strange-in-the-multiverse-of-madness.jpg";
-  const person29 =
-    "https://raw.githubusercontent.com/AugustoMarcelo/mcuapi/master/covers/thor-love-and-thunder.jpg";
-  useEffect(()=>{
-    movies(setMovies)
-  }, [])
+
+  useEffect(() => {
+    movies(setMovies);
+  }, []);
   return (
     <>
-    
-      {unicMovies !== null
-        ? unicMovies.map((movie) =>
-            movie.id === 28 ? (
-              <div key={movie.id}>
-                <a href={`/pelicula/${movie.id}`}>{movie.title}</a>
-                <img src={person28} alt={movie.title} />
-              </div>
-            ) : movie.id === 29 ? (
-              <div key={movie.id}>
-                <a href={`/pelicula/${movie.id}`}>{movie.title}</a>
-                <img src={person29} alt={movie.title} />
-              </div>
-            ) : (
-              <div key={movie.id}>
-                <a href={`/pelicula/${movie.id}`}>{movie.title}</a>
-                <img src={movie.cover_url} alt={movie.title} />
-              </div>
-            )
-          )
-        : "No hay peliculas"}
+      <section className="container py-5">
+        <Row xs={1} md={2} lg={3} className="g-4">
+          {unicMovies !== null
+            ? unicMovies.map((movie) => 
+            
+            (movie.id !== 3 && movie.id !== 28) ? (
+                <Col key={movie.id}>
+                  <Card>
+                    <Card.Img
+                      variant="top"
+                      src={movie.cover_url}
+                      alt={movie.title}
+                    />
+                    <Card.Body>
+                      <Card.Title>{movie.title}</Card.Title>
+                      <Card.Text>
+                        Fecha de salida: {movie.release_date}
+                      </Card.Text>
+                      <div className="d-grid gap-2">
+                        <Button
+                          href={`/pelicula/${movie.id}`}
+                          variant="secondary"
+                          size="lg"
+                          className="stretched-link"
+                        >
+                          Ver mas
+                        </Button>
+                      </div>
+                    </Card.Body>
+                    <Card.Footer>
+                      <small className="text-muted">
+                        Dirigida por: {movie.directed_by}
+                      </small>
+                    </Card.Footer>
+                  </Card>
+                </Col>
+              ): "")
+            : "No hay peliculas"}
+        </Row>
+      </section>
     </>
   );
 };

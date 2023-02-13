@@ -1,20 +1,21 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Inicio from "./components/Inicio";
-import Pelicula from "./components/Pelicula"
+import Pelicula from "./components/Pelicula";
+import Nav from "./components/Nav";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 function App() {
   return (
-      <section className="container-md">
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Inicio></Inicio>}></Route>
-            <Route
-              path="/pelicula/:id"
-              element={<Pelicula></Pelicula>}
-            ></Route>
-          </Routes>
-        </BrowserRouter>
-      </section>
+    <div className="App">
+      <BrowserRouter>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Inicio />}></Route>
+          <Route path="/pelicula/:id" element={<Pelicula></Pelicula>}></Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

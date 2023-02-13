@@ -1,0 +1,16 @@
+.movie{
+    color: #fff;
+}
+
+.figure{
+    display: flex!important;
+    justify-content: center;
+}
+
+.carousel-item{
+    background-color: rgba(0,0,0,0.5)
+}
+
+.carousel-caption{
+    background-color: rgba(0,0,0,0.7)
+}
