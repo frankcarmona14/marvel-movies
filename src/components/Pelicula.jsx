@@ -17,7 +17,7 @@ const Pelicula = () => {
 
   useEffect(() => {
     movie(params.id, setMovie);
-  }, []);
+  }, [params.id]);
 
   return (
     <>
