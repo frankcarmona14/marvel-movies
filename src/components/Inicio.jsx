@@ -13,9 +13,7 @@ const Inicio = () => {
       <section className="container py-5">
         <Row xs={1} md={2} lg={3} className="g-4">
           {unicMovies !== null
-            ? unicMovies.map((movie) => 
-            
-            (movie.id !== 3 && movie.id !== 28) ? (
+            ? unicMovies.map((movie) => (
                 <Col key={movie.id}>
                   <Card>
                     <Card.Img
@@ -46,7 +44,7 @@ const Inicio = () => {
                     </Card.Footer>
                   </Card>
                 </Col>
-              ): "")
+              ))
             : "No hay peliculas"}
         </Row>
       </section>
