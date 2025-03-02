@@ -15,7 +15,7 @@ const Inicio = () => {
     <>
       <section className="container py-5">
         <Row xs={1} md={2} lg={3} className="g-4">
-          {!loading && <Spinner />}
+          {loading && <Spinner />}
           {unicMovies !== null
             ? unicMovies.map((movie) => (
                 <Col key={movie.id}>

@@ -20,11 +20,11 @@ const Pelicula = () => {
   useEffect(() => {
     movie(params.id, setMovie);
     setLoading(false)
-  }, [params.id]);
+  }, []);
 
   return (
     <>
-      {!loading && <Spinner />}
+      {loading && <Spinner />}
       {unicMovie !== null ? (
         <Container className="movie">
           <Row className="py-5">
