@@ -5,51 +5,48 @@ import Spinner from "./Spinner";
 
 const Inicio = () => {
   const [unicMovies, setMovies] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     movies(setMovies);
-    setLoading(false)
   }, []);
   return (
     <>
       <section className="container py-5">
         <Row xs={1} md={2} lg={3} className="g-4">
-          {loading && <Spinner />}
           {unicMovies !== null
             ? unicMovies.map((movie) => (
-                <Col key={movie.id}>
-                  <Card>
-                    <Card.Img
-                      variant="top"
-                      src={movie.cover_url}
-                      alt={movie.title}
-                    />
-                    <Card.Body>
-                      <Card.Title>{movie.title}</Card.Title>
-                      <Card.Text>
-                        Fecha de salida: {movie.release_date}
-                      </Card.Text>
-                      <div className="d-grid gap-2">
-                        <Button
-                          href={`/pelicula/${movie.id}`}
-                          variant="secondary"
-                          size="lg"
-                          className="stretched-link"
-                        >
-                          Ver mas
-                        </Button>
-                      </div>
-                    </Card.Body>
-                    <Card.Footer>
-                      <small className="text-muted">
-                        Dirigida por: {movie.directed_by}
-                      </small>
-                    </Card.Footer>
-                  </Card>
-                </Col>
-              ))
-            : "No hay peliculas"}
+              <Col key={movie.id}>
+                <Card>
+                  <Card.Img
+                    variant="top"
+                    src={movie.cover_url}
+                    alt={movie.title}
+                  />
+                  <Card.Body>
+                    <Card.Title>{movie.title}</Card.Title>
+                    <Card.Text>
+                      Fecha de salida: {movie.release_date}
+                    </Card.Text>
+                    <div className="d-grid gap-2">
+                      <Button
+                        href={`/pelicula/${movie.id}`}
+                        variant="secondary"
+                        size="lg"
+                        className="stretched-link"
+                      >
+                        Ver mas
+                      </Button>
+                    </div>
+                  </Card.Body>
+                  <Card.Footer>
+                    <small className="text-muted">
+                      Dirigida por: {movie.directed_by}
+                    </small>
+                  </Card.Footer>
+                </Card>
+              </Col>
+            ))
+            : <Spinner />}
         </Row>
       </section>
     </>
