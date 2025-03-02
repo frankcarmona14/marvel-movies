@@ -6,6 +6,17 @@
   background-color: #1b1b1b;
 }
 
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .spinner {
   width: 40px;
   height: 40px;
