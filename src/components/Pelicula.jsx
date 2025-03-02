@@ -10,17 +10,21 @@ import {
   Carousel,
   Figure,
 } from "react-bootstrap/";
+import Spinner from "./Spinner";
 
 const Pelicula = () => {
   const params = useParams();
   const [unicMovie, setMovie] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     movie(params.id, setMovie);
+    setLoading(false)
   }, [params.id]);
 
   return (
     <>
+      {!loading && <Spinner />}
       {unicMovie !== null ? (
         <Container className="movie">
           <Row className="py-5">

@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { movies } from "../functions/functions";
 import { Row, Col, Card, Button } from "react-bootstrap/";
+import Spinner from "./Spinner";
 
 const Inicio = () => {
   const [unicMovies, setMovies] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     movies(setMovies);
+    setLoading(false)
   }, []);
   return (
     <>
       <section className="container py-5">
         <Row xs={1} md={2} lg={3} className="g-4">
+          {!loading && <Spinner />}
           {unicMovies !== null
             ? unicMovies.map((movie) => (
                 <Col key={movie.id}>
